@@ -1,4 +1,5 @@
 # laravel-api-skeleton
+*The Simple Laravel Sanctum API Skeleton with a simple demo Vue single page application*
 #### Back-End
  + Laravel
  + Sanctum  
