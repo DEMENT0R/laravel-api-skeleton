@@ -175,9 +175,7 @@
                         device_name: this.inputDeviceName,
                     })
                 };
-                fetch("/api/register", requestOptions)
-                    .then(response => response.json())
-                    .then(data => (this.processData(data)));
+                this.sendRequest("/api/register", requestOptions);
                 e.preventDefault();
             },
             login: function (e) {
@@ -190,22 +188,30 @@
                         device_name: this.inputDeviceName,
                     })
                 };
-                fetch("/api/login", requestOptions)
-                    .then(response => response.json())
-                    .then(data => (this.processData(data)));
+                this.sendRequest("/api/login", requestOptions);
                 e.preventDefault();
             },
             getData(token) {
                 const requestOptions = {
-                    method: "get",
+                    method: "GET",
                     headers: {
                         "Content-Type": "application/json",
                         "Authorization": "Bearer " + token,
                     }
                 };
-                fetch("/api/user", requestOptions)
-                    .then(response => response.json())
-                    .then(data => (this.processData(data)));
+                this.sendRequest("/api/user", requestOptions);
+            },
+            sendRequest(url, requestOptions){
+                fetch(url, requestOptions)
+                    .then((response) => {
+                        if (response.status !== 200) {
+                            this.token = "";
+                        };
+                        return response.json();
+                    })
+                    .then((data) => {
+                        this.processData(data);
+                    });
             },
             processData(data) {
                 this.$set(this.data, 'response', data);
