@@ -154,8 +154,15 @@
             };
         },
         mounted() {
+            if (localStorage.token) {
+                this.token = localStorage.getItem('token');
+            }
         },
-
+        watch: {
+            token(newToken) {
+                localStorage.setItem('token', newToken);
+            }
+        },
         methods: {
             register: function (e) {
                 const requestOptions = {
