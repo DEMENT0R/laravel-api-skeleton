@@ -1,17 +1,17 @@
 # laravel-api-skeleton
-####Back-End
+#### Back-End
  + Laravel
  + Sanctum  
  
-####Front-End
+#### Front-End
  + Vue.js (Simple SPA)
  + Bootstrap
 
 ## Installation
-####Copy:  
+#### Copy:  
 `git clone`  
-####Install:  
+#### Install:  
 `composer install`  
 `npm install`  
-####Build:  
+#### Build:  
 `npm run watch`  
