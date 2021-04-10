@@ -147,7 +147,7 @@
                 inputName: "",
                 inputEmail: "",
                 inputPassword: "",
-                inputDeviceName: "",
+                inputDeviceName: navigator.userAgent,
                 alert: "",
                 data: {},
                 userData: {},
