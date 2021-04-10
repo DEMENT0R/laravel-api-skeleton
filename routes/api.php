@@ -14,6 +14,13 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+Route::post('register', '\App\Http\Controllers\API\AuthController@register');
+Route::post('login', '\App\Http\Controllers\API\AuthController@login');
+
+Route::middleware('auth:sanctum')->get('/name', function (Request $request) {
+    return response()->json(['name' => $request->user()->name]);
+});
+
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
