@@ -69,7 +69,7 @@
             </div>
             <div class="col-12 col-md-4">
                 <div id="login" class="card">
-                    <div class="card-header">Register</div>
+                    <div class="card-header">Login</div>
                     <div class="card-body">
                         <form @submit="login"
                               action="/api/login"
